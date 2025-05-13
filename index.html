@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="TechTower WebHost offers reliable and affordable web hosting services in Uganda. Get started today via WhatsApp, email, or phone call.">
+   
+    <title>TechTower WebHost - Reliable Web Hosting Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: whitesmoke;
+        }
+        .typing {
+            border-right: 2px solid;
+            white-space: nowrap;
+            overflow: hidden;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen p-4">
+    <div class="text-center mb-8">
+        <div id="typing-text" class="text-2xl font-semibold"></div>
+    </div>
+
+    <div class="flex flex-wrap gap-4 justify-center">
+        <a href="https://wa.me/256703283529" class="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-full transition">Order on WhatsApp</a>
+        <a href="mailto:sales@techtowerwebhost.com" class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-full transition">Mail Us</a>
+        <a href="tel:+256703283529" class="bg-gray-700 hover:bg-gray-800 text-white px-5 py-2 rounded-full transition">Call to Order</a>
+    </div>
+
+    <footer class="absolute bottom-0 left-0 right-0 text-center p-4 bg-gray-800 text-white">
+        <p>&copy; 2025 TechTower WebHost. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const messages = [
+            "Hi There!!, Welcome to TechTower WebHost",
+           
+            "Reliable Web Hosting Services",
+            "Our Website Is Launching Soon...",
+            "Meanwhile, you can order our services Via WhatsApp",
+            "We offer the best web hosting solutions",
+        ];
+
+        let messageIndex = 0;
+        let charIndex = 0;
+        const typingText = document.getElementById("typing-text");
+
+        function typeMessage() {
+            if (charIndex < messages[messageIndex].length) {
+                typingText.textContent += messages[messageIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeMessage, 50);
+            } else {
+                setTimeout(deleteMessage, 2000);
+            }
+        }
+
+        function deleteMessage() {
+            if (charIndex > 0) {
+                typingText.textContent = messages[messageIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(deleteMessage, 20);
+            } else {
+                messageIndex = (messageIndex + 1) % messages.length;
+                setTimeout(typeMessage, 400);
+            }
+        }
+
+        typeMessage();
+    </script>
+</body>
+</html>
